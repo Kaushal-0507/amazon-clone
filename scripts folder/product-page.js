@@ -22,7 +22,7 @@ products.forEach((product) => {
           }</div>
         </div>
 
-        <div class="product-price">${(product.priceCents / 100).toFixed(
+        <div class="product-price">$${(product.priceCents / 100).toFixed(
           2
         )}</div>
 
