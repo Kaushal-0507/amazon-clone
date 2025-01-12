@@ -168,13 +168,13 @@ body {
 }
 
 .nav-right-cart i {
-  font-size: 28px;
+  font-size: 30px;
 }
 
 .nav-right-cart p {
   position: absolute;
   top: 4px;
-  left: 18px;
+  left: 17px;
   color: rgb(228, 155, 7);
   padding: 0px 5px;
   border-radius: 50%;
