@@ -8,6 +8,10 @@ body {
   background-color: white;
 }
 
+a {
+  text-decoration: none;
+}
+
 .products-grid {
   display: grid;
   grid-template-columns: repeat(8, 1fr);

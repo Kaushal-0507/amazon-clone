@@ -4,6 +4,13 @@ import { formatCurrency } from "./utils/money.js";
 import dayjs from "https://unpkg.com/dayjs@1.11.10/esm/index.js";
 import { deliveryOptions } from "./deliveryOptions.js";
 
+function updateCartOnLoad() {
+  const cartTotalQuantity = JSON.parse(localStorage.getItem("cart"));
+  document.querySelector(".js-cart-quantity").innerHTML =
+    cartTotalQuantity.length;
+}
+updateCartOnLoad();
+
 let cartSummary = "";
 cart.forEach((item) => {
   const productId = item.productId;
@@ -109,5 +116,6 @@ document.querySelectorAll(".js-delete-link").forEach((link) => {
       `.js-cart-item-${productId}`
     );
     deleteContainer.remove();
+    updateCartOnLoad();
   });
 });
