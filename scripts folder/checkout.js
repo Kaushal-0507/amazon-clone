@@ -1,4 +1,4 @@
-import { cart, deleteFromCart } from "./cart.js";
+import { cart, deleteFromCart, updateCartQuantity } from "./cart.js";
 import { products } from "./products.js";
 import { formatCurrency } from "./utils/money.js";
 import dayjs from "https://unpkg.com/dayjs@1.11.10/esm/index.js";
@@ -55,9 +55,13 @@ cart.forEach((item) => {
                   <span> Quantity: <span class="quantity-label">${
                     item.quantity
                   }</span> </span>
-                  <span class="update-quantity-link link-primary">
+                  <span class="update-quantity-link link-primary js-update-link-${
+                    matchingProduct.id
+                  }" data-product-id="${matchingProduct.id}" >
                     Update
                   </span>
+                  <input type="text" class="quantity-textbox js-quantity-textbox" />
+                  <span class="save-quantity-link link-primary js-save-quantity">Save</span>
                   <span class="delete-quantity-link link-primary js-delete-link" data-product-id="${
                     matchingProduct.id
                   }">
@@ -117,5 +121,12 @@ document.querySelectorAll(".js-delete-link").forEach((link) => {
     );
     deleteContainer.remove();
     updateCartOnLoad();
+  });
+});
+
+document.querySelectorAll(".update-quantity-link").forEach((link) => {
+  link.addEventListener("click", () => {
+    const productId = link.dataset.productId;
+    updateCartQuantity(productId);
   });
 });

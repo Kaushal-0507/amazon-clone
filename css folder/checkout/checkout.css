@@ -102,6 +102,19 @@ a {
   margin-bottom: 5px;
 }
 
+.quantity-textbox {
+  width: 40px;
+  height: 21px;
+  border: 1px solid black;
+  border-radius: 0%;
+  display: none;
+}
+
+.save-quantity-link {
+  margin: 0%;
+  display: none;
+}
+
 .product-quantity .link-primary {
   margin-left: 3px;
 }

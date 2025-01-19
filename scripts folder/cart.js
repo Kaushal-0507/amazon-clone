@@ -49,3 +49,17 @@ export function deleteFromCart(productId) {
   cart = newCart;
   saveToStorage();
 }
+
+export function updateCartQuantity(productId) {
+  const updateLink = document.querySelector(`.js-update-link-${productId}`);
+  updateLink.style.display = "none";
+  const quantityTextbox = document.querySelector(".js-quantity-textbox");
+  quantityTextbox.style.display = "inline";
+  const quantitySaveLink = document.querySelector(".js-save-quantity");
+  quantitySaveLink.style.display = "inline";
+  quantitySaveLink.addEventListener("click", () => {
+    quantityTextbox.style.display = "none";
+    quantitySaveLink.style.display = "none";
+    updateLink.style.display = "inline";
+  });
+}
