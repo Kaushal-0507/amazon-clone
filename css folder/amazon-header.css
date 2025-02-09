@@ -14,16 +14,11 @@ a {
   text-decoration: none;
 }
 
-body {
-  padding-top: 55px;
-  background-color: lightgray;
-}
-
 .nav {
   display: flex;
   align-items: center;
   background-color: var(--second-nav-bg);
-  padding: 5px 5px 5px 8px;
+  padding: 6px 5px 6px 8px;
   color: white;
   justify-content: space-between;
   position: fixed;

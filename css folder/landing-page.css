@@ -10,6 +10,215 @@
   --second-nav-bg: #0f1111;
 }
 
+a {
+  text-decoration: none;
+}
+
+body {
+  padding-top: 57px;
+  background-color: lightgray;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  background-color: var(--second-nav-bg);
+  padding: 5px 5px 5px 8px;
+  color: white;
+  justify-content: space-between;
+  position: fixed;
+  top: 0%;
+  left: 0%;
+  right: 0%;
+  z-index: 100;
+}
+
+.nav-left img {
+  display: flex;
+  align-items: center;
+  padding: 5px;
+}
+
+.nav-left img:hover,
+.nav-left-delivery:hover,
+.nav-right-lang:hover,
+.nav-right-text:hover,
+.nav-right-cart:hover,
+.menu-div:hover,
+.second-nav-p:hover {
+  border: white 1px solid;
+}
+
+.nav-left-delivery {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 5px 10px;
+  line-height: 1.2;
+  white-space: nowrap;
+  cursor: pointer;
+  margin: 0px 10px;
+}
+
+.nav-left-delivery i {
+  font-size: 14px;
+  padding-top: 13px;
+}
+
+.nav-left-delivery p {
+  font-size: 12px;
+  color: lightgray;
+}
+
+.nav-left-delivery p span {
+  display: block;
+  color: white;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.nav-middle {
+  display: flex;
+  align-items: center;
+  margin: 8px 10px 3px 5px;
+  width: 1000px;
+  flex: 1;
+}
+
+.nav-middle p {
+  font-size: 12px;
+  color: rgba(71, 70, 70);
+  background: rgb(231, 231, 231);
+  padding: 9px 10px;
+  border-top-left-radius: 10%;
+  border-bottom-left-radius: 10%;
+  border: none;
+  white-space: nowrap;
+}
+
+.nav-middle p i {
+  font-size: 10px;
+  margin-left: 5px;
+  color: rgb(70, 69, 69);
+}
+
+.nav-middle input {
+  padding: 8px;
+  border: none;
+  outline: none;
+  width: 100%;
+  min-width: 200px;
+}
+
+.nav-middle button {
+  border: none;
+  background-color: rgb(234, 183, 17);
+  padding: 8px 13px;
+  border-top-right-radius: 10%;
+  border-bottom-right-radius: 10%;
+  outline: none;
+  white-space: nowrap;
+}
+
+.nav-right-lang {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  padding: 15px 8px 8px;
+  white-space: nowrap;
+  cursor: pointer;
+  margin: 0px 10px;
+}
+
+.nav-right-lang p {
+  font-size: 14px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.nav-right-lang p i,
+.nav-right-text span i {
+  font-size: 10px;
+  color: rgb(128, 126, 126);
+}
+
+.nav-right-text {
+  line-height: 1;
+  padding: 8px 10px;
+  white-space: nowrap;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+.nav-right-text p {
+  font-size: 11px;
+  white-space: nowrap;
+}
+
+.nav-right-text span {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.nav-right-cart {
+  padding: 6px 10px;
+  position: relative;
+  cursor: pointer;
+  margin: 0px 10px;
+}
+
+.nav-right-cart a {
+  color: white;
+}
+
+.nav-right-cart i {
+  font-size: 30px;
+}
+
+.nav-right-cart p {
+  position: absolute;
+  top: 4px;
+  left: 20px;
+  color: rgb(228, 155, 7);
+  padding: 0px 5px;
+  border-radius: 50%;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+/* second nav */
+
+.second-nav {
+  background-color: var(--nav-bg);
+  display: flex;
+  padding: 0px 5px;
+  align-items: center;
+  height: 35px;
+  gap: 10px;
+}
+
+.menu-div {
+  display: flex;
+  align-items: center;
+  color: white;
+  gap: 5px;
+  padding: 6px;
+  cursor: pointer;
+}
+
+.menu-div p {
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.second-nav-p {
+  color: white;
+  font-size: 13px;
+  padding: 6px 8px;
+  cursor: pointer;
+}
+
 /* hero-section */
 
 .hero-section {

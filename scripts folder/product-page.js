@@ -4,8 +4,6 @@ import { formatCurrency } from "./utils/money.js";
 
 function updateCartOnLoad() {
   const cartTotalQuantity = JSON.parse(localStorage.getItem("cart"));
-  console.log(cartTotalQuantity, typeof cartTotalQuantity);
-  console.log(cartTotalQuantity.length);
   document.querySelector(".js-cart-quantity").innerHTML =
     cartTotalQuantity.length;
 }
