@@ -3,6 +3,7 @@ import { getProduct } from "../products.js";
 import { formatCurrency } from "../utils/money.js";
 import dayjs from "https://unpkg.com/dayjs@1.11.10/esm/index.js";
 import { deliveryOptions, getDeliveryOption } from "../deliveryOptions.js";
+import { renderPaymentSummary } from "./summaryPayment.js";
 
 export function renderOderSummary() {
   let cartSummary = "";
@@ -105,6 +106,7 @@ export function renderOderSummary() {
         `.js-cart-item-${productId}`
       );
       deleteContainer.remove();
+      renderPaymentSummary();
       updateCartOnLoad();
     });
   });
@@ -114,6 +116,7 @@ export function renderOderSummary() {
       const { productId, deliveryOptionId } = element.dataset;
       updateDeliveryOption(productId, deliveryOptionId);
       renderOderSummary();
+      renderPaymentSummary();
     });
   });
 }
