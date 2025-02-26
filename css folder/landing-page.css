@@ -47,6 +47,12 @@ body {
 .menu-div:hover,
 .second-nav-p:hover {
   border: white 1px solid;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.nav-middle button:hover {
+  background-color: rgb(247, 212, 96);
 }
 
 .nav-left-delivery {
@@ -81,7 +87,8 @@ body {
   display: flex;
   align-items: center;
   margin: 8px 10px 3px 5px;
-  width: 1000px;
+  width: 100%;
+  max-width: 1000px;
   flex: 1;
 }
 
@@ -94,12 +101,6 @@ body {
   border-bottom-left-radius: 10%;
   border: none;
   white-space: nowrap;
-}
-
-.nav-middle p i {
-  font-size: 10px;
-  margin-left: 5px;
-  color: rgb(70, 69, 69);
 }
 
 .nav-middle input {
@@ -118,6 +119,7 @@ body {
   border-bottom-right-radius: 10%;
   outline: none;
   white-space: nowrap;
+  cursor: pointer;
 }
 
 .nav-right-lang {
@@ -169,20 +171,18 @@ body {
 
 .nav-right-cart a {
   color: white;
-}
-
-.nav-right-cart i {
-  font-size: 30px;
+  display: flex;
+  align-items: center;
 }
 
 .nav-right-cart p {
   position: absolute;
   top: 4px;
-  left: 20px;
+  left: 29px;
   color: rgb(228, 155, 7);
   padding: 0px 5px;
   border-radius: 50%;
-  font-size: 15px;
+  font-size: 14px;
   font-weight: 700;
 }
 
@@ -195,6 +195,17 @@ body {
   align-items: center;
   height: 35px;
   gap: 10px;
+  overflow-x: auto;
+  white-space: nowrap;
+}
+
+.second-nav::-webkit-scrollbar {
+  display: none;
+}
+
+.second-nav {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
 .menu-div {
@@ -454,9 +465,9 @@ body {
     flex-wrap: wrap;
   }
   .nav-middle {
-    order: 7;
+    order: 2;
     margin: 15px 0 5px;
-    min-width: 300px;
+    min-width: 250px;
   }
   .product-div {
     max-width: 48%;
@@ -474,6 +485,10 @@ body {
 @media only screen and (max-width: 630px) {
   .nav-left-delivery {
     display: none;
+  }
+  .product-div {
+    max-width: 90%;
+    margin: auto;
   }
   .nav-right-lang {
     display: none;
@@ -493,8 +508,11 @@ body {
     text-wrap: nowrap;
   }
   .nav-middle {
-    order: 4;
+    order: 2;
     margin: 15px 0 5px;
-    min-width: 300px;
+    min-width: 250px;
+  }
+  .inside-sign-in h2 {
+    font-size: medium;
   }
 }

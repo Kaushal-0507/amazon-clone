@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Tracking</title>
+
+    <!-- This code is needed for responsive design to work.
+      (Responsive design = make the website look good on
+      smaller screen sizes like a phone or a tablet). -->
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Load a font called Roboto from Google Fonts. -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="/css folder/landing-page.css" />
+    <link rel="stylesheet" href="/css folder/tracking.css" />
+  </head>
+  <body>
+    <nav class="nav">
+      <a href="/"><img width="110px" src="/assets/amazon_logo.png" alt="" /></a>
+      <div class="nav-left-delivery">
+        <i class="fa-solid fa-location-dot"></i>
+        <p>Deliver to <span>India</span></p>
+      </div>
+
+      <div class="nav-middle">
+        <p>All <i class="fa-solid fa-caret-down"></i></p>
+        <input type="text" placeholder="Search Amazon" />
+        <button><i class="fa-solid fa-magnifying-glass"></i></button>
+      </div>
+
+      <div class="nav-right-lang">
+        <img width="20px" src="/assets/us_flag.png" alt="" />
+        <p>EN <i class="fa-solid fa-caret-down"></i></p>
+      </div>
+      <div class="nav-right-text">
+        <p>Hello, sign in</p>
+        <span>Account & Lists <i class="fa-solid fa-caret-down"></i></span>
+      </div>
+      <div class="nav-right-text">
+        <p>Returns</p>
+        <span>& Orders</span>
+      </div>
+      <div class="nav-right-cart">
+        <a href="/checkout.html">
+          <img
+            src="images/icons/cart-icon.png"
+            alt=""
+            width="50px"
+            height="30px"
+          />
+          <p class="cart-quantity js-cart-quantity">0</p>
+        </a>
+      </div>
+    </nav>
+
+    <div class="main">
+      <div class="order-tracking js-order-tracking"></div>
+    </div>
+    <script type="module" src="/scripts folder/tracking.js"></script>
+  </body>
+</html>

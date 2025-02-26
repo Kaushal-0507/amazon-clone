@@ -7,7 +7,7 @@ function updateCartOnLoad() {
   document.querySelector(".js-cart-quantity").innerHTML =
     cartTotalQuantity.length;
 }
-
+updateCartOnLoad();
 let productHTML = "";
 products.forEach((product) => {
   productHTML += `<div class="product-container">
@@ -63,7 +63,7 @@ products.forEach((product) => {
         }">Add to Cart</button>
       </div>`;
 });
-
+// console.log(productHTML);
 document.querySelector(".js-product-grid").innerHTML = productHTML;
 
 function updateCart() {

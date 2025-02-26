@@ -2,6 +2,14 @@ import { cart } from "../cart.js";
 import { getProduct } from "../products.js";
 import { formatCurrency } from "../utils/money.js";
 import { getDeliveryOption } from "../deliveryOptions.js";
+import { addOrders } from "../orders.js";
+
+function updateCartOnLoad() {
+  const cartTotalQuantity = JSON.parse(localStorage.getItem("cart"));
+  document.querySelector(".js-cart-quantity").innerHTML =
+    cartTotalQuantity.length;
+}
+updateCartOnLoad();
 
 export function renderPaymentSummary() {
   let productPriceCents = 0;
@@ -58,10 +66,40 @@ export function renderPaymentSummary() {
             )}</div>
           </div>
 
-          <button class="place-order-button button-primary">
+          <button class="place-order-button button-primary js-place-order-btn">
             Place your order
           </button>
           `;
 
   document.querySelector(".js-payment-summary").innerHTML = paymentSummaryHTML;
+
+  document;
+  document
+    .querySelector(".js-place-order-btn")
+    .addEventListener("click", async () => {
+      try {
+        const order = {
+          cart: cart.map((cartItem) => ({
+            productId: cartItem.productId,
+            quantity: cartItem.quantity,
+            deliveryOptionId: cartItem.deliveryOptionId,
+          })),
+        };
+
+        const response = await fetch("https://supersimplebackend.dev/orders", {
+          method: "POST",
+          headers: {
+            "content-type": "application/json",
+          },
+          body: JSON.stringify(order),
+        });
+
+        const orders = await response.json();
+        addOrders(orders);
+      } catch (error) {
+        console.log("Unexpected Error, try again later!");
+      }
+
+      window.location.href = "orders.html";
+    });
 }

@@ -18,6 +18,14 @@ a {
   text-decoration: none;
 }
 
+.link-primary {
+  color: rgb(1, 124, 182);
+  cursor: pointer;
+}
+.link-primary:hover {
+  color: rgb(196, 80, 0);
+}
+
 .page-title {
   font-weight: 700;
   font-size: 22px;
@@ -29,6 +37,10 @@ a {
   grid-template-columns: 1fr 350px;
   column-gap: 12px;
   align-items: start;
+}
+
+.quantity-input {
+  width: 60px;
 }
 
 @media (max-width: 1000px) {
