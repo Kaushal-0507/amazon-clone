@@ -1,5 +1,5 @@
-import { renderOderSummary } from "../../scripts folder/js_checkout/summaryOrder.js";
-import { loadFromStorage } from "../../scripts folder/cart.js";
+import { renderOderSummary } from "../../scripts-folder/js_checkout/summaryOrder.js";
+import { loadFromStorage } from "../../scripts-folder/cart.js";
 
 describe("test suite: renderOrderSummary", () => {
   it("displays the cart", () => {
