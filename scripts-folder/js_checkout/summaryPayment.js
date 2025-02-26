@@ -7,7 +7,7 @@ import { addOrders } from "../orders.js";
 function updateCartOnLoad() {
   const cartTotalQuantity = JSON.parse(localStorage.getItem("cart"));
   document.querySelector(".js-cart-quantity").innerHTML =
-    cartTotalQuantity.length;
+    cartTotalQuantity?.length ?? 0;
 }
 updateCartOnLoad();
 

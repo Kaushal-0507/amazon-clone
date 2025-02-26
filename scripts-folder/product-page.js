@@ -5,7 +5,7 @@ import { formatCurrency } from "./utils/money.js";
 function updateCartOnLoad() {
   const cartTotalQuantity = JSON.parse(localStorage.getItem("cart"));
   document.querySelector(".js-cart-quantity").innerHTML =
-    cartTotalQuantity.length;
+    cartTotalQuantity?.length ?? 0;
 }
 updateCartOnLoad();
 let productHTML = "";
@@ -63,7 +63,6 @@ products.forEach((product) => {
         }">Add to Cart</button>
       </div>`;
 });
-// console.log(productHTML);
 document.querySelector(".js-product-grid").innerHTML = productHTML;
 
 function updateCart() {

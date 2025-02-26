@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const cartTotalQuantity = JSON.parse(localStorage.getItem("cart"));
     const cartQuantityElement = document.querySelector(".js-cart-quantity");
     if (cartQuantityElement) {
-      cartQuantityElement.innerHTML = cartTotalQuantity.length;
+      cartQuantityElement.innerHTML = cartTotalQuantity.length ?? 0;
     }
   }
   updateCartOnLoad();

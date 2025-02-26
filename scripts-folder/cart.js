@@ -3,8 +3,8 @@ export const cart = JSON.parse(localStorage.getItem("cart")) || [];
 export function loadFromStorage() {
   const cartFromStorage = JSON.parse(localStorage.getItem("cart"));
   if (cartFromStorage) {
-    cart.length = 0; // Clear the existing cart
-    cart.push(...cartFromStorage); // Add items from storage to the cart
+    cart.length = 0;
+    cart.push(...cartFromStorage);
   }
 }
 
@@ -27,7 +27,7 @@ export function addToCart(productId, quantity) {
     cart.push({
       productId: productId,
       quantity: quantity,
-      deliveryOptionId: "1", // Default delivery option
+      deliveryOptionId: "1",
     });
   }
 
