@@ -2,21 +2,17 @@ import { orders } from "./orders.js";
 import { getProduct } from "./products.js";
 import dayjs from "https://unpkg.com/dayjs@1.11.10/esm/index.js";
 
-// Function to get query parameters from the URL
 function getQueryParam(param) {
   const urlParams = new URLSearchParams(window.location.search);
   return urlParams.get(param);
 }
 
-// Function to update the tracking page with product details
 function updateTrackingPage(productId) {
-  // Find the order that contains the product
   const order = orders.find((order) =>
     order.products.some((product) => product.productId === productId)
   );
 
   if (order) {
-    // Find the specific product in the order
     const ordersProduct = order.products.find(
       (product) => product.productId === productId
     );
@@ -25,12 +21,10 @@ function updateTrackingPage(productId) {
       const matchingItem = getProduct(ordersProduct.productId);
 
       if (matchingItem) {
-        // Format the delivery date
         const deliveryDate = dayjs(ordersProduct.estimatedDeliveryTime).format(
           "dddd, MMMM DD"
         );
 
-        // Generate the HTML for the tracking page
         const trackPageHTML = `
           <a class="back-to-orders-link link-primary" href="orders.html">
             View all orders

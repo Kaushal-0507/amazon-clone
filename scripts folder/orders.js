@@ -1,7 +1,6 @@
 import { formatCurrency } from "./utils/money.js";
 import dayjs from "https://unpkg.com/dayjs@1.11.10/esm/index.js";
 import { getProduct } from "./products.js";
-import { getDeliveryOption } from "./deliveryOptions.js";
 
 export const orders = JSON.parse(localStorage.getItem("orders")) || [];
 
@@ -14,13 +13,14 @@ function saveToStorage() {
   localStorage.setItem("orders", JSON.stringify(orders));
 }
 
-function updateCartOnLoad() {
-  const cartTotalQuantity = JSON.parse(localStorage.getItem("cart"));
-  document.querySelector(".js-cart-quantity").innerHTML =
-    cartTotalQuantity.length;
-}
-
 document.addEventListener("DOMContentLoaded", () => {
+  function updateCartOnLoad() {
+    const cartTotalQuantity = JSON.parse(localStorage.getItem("cart"));
+    const cartQuantityElement = document.querySelector(".js-cart-quantity");
+    if (cartQuantityElement) {
+      cartQuantityElement.innerHTML = cartTotalQuantity.length;
+    }
+  }
   updateCartOnLoad();
 
   if (orders.length > 0) {
@@ -67,12 +67,10 @@ document.addEventListener("DOMContentLoaded", () => {
       const matchingItem = getProduct(productId);
 
       const quantity = ordersProduct.quantity;
-
-      const deliveryOption = getDeliveryOption(ordersProduct.deliveryOptionId);
-
       const today = dayjs();
-      const deliveryDate = today.add(deliveryOption.deliveryDays, "days");
-      const dateString = deliveryDate.format("dddd, MMMM D");
+      const deliveryDate = dayjs(ordersProduct.estimatedDeliveryTime).format(
+        "dddd, MMMM DD"
+      );
 
       ordersProductsHTML += `<div class="product-image-container">
             <img src="${matchingItem.image}" />
@@ -82,7 +80,7 @@ document.addEventListener("DOMContentLoaded", () => {
             <div class="product-name">
               ${matchingItem.name}
             </div>
-            <div class="product-delivery-date">Arriving on: ${dateString}</div>
+            <div class="product-delivery-date">Arriving on: ${deliveryDate}</div>
             <div class="product-quantity">Quantity: ${quantity}</div>
             <button class="buy-again-button button-primary">
               <img class="buy-again-icon" src="images/icons/buy-again.png" />
